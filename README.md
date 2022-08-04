@@ -15,4 +15,5 @@ to use as a base for URL shortening, e.g. give 1000 unique numbers at once.
 Secondly, it is required to add caching for resolving of original URLs (e.g. keep the most
 frequently accessed URLs in the cache).
 
-Then the service can be scaled horizontally as much as needed.
+Then the service can be scaled horizontally as much as needed. To make it more optimal,
+requests can be sharded based on the hash of a shortened URL.
