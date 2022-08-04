@@ -57,7 +57,7 @@ public final class FixedLengthShortener implements UrlShortener {
 
     @Override
     public String resolveShortened(String shortenedUrl) {
-        return repository.find(shortenedUrl)
+        return repository.findById(shortenedUrl)
                 .map(ShortenedUrl::original)
                 .orElseThrow(() -> new IllegalArgumentException("Couldn't find the original URL for " + shortenedUrl));
 

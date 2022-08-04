@@ -1,10 +1,20 @@
-version: '3.8'
+version: '3.9'
 
 services:
   redis:
     image: redis
     ports:
       - 6379:6379
+
+  mongodb:
+    image: mongo:5.0
+    ports:
+      - 27017:27017
+    volumes:
+      - ~/apps/mongo:/data/db
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=surl
+      - MONGO_INITDB_ROOT_PASSWORD=surl-83948
 
   s-url:
     image: s-url:latest
@@ -14,6 +24,12 @@ services:
     depends_on:
       - "redis"
     environment:
-      - "SPRING_PROFILES_ACTIVE=prod"
-      - "SPRING_REDIS_HOST=redis"
-      - "SPRING_REDIS_PORT=6379"
+      - spring.profiles.active=prod
+      - spring.redis.host=redis
+      - spring.redis.port=6379
+      - spring.data.mongodb.host=  mongodb
+      - spring.data.mongodb.port=27017
+      - spring.data.mongodb.authentication-database=admin
+      - spring.data.mongodb.username=surl
+      - spring.data.mongodb.password=surl-83948
+      - spring.data.mongodb.database=s-url
