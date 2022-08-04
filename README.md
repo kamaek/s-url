@@ -17,3 +17,6 @@ frequently accessed URLs in the cache).
 
 Then the service can be scaled horizontally as much as needed. To make it more optimal,
 requests can be sharded based on the hash of a shortened URL.
+
+Also, it makes sense to implement dynamic length of a shortened URL, so the service
+doesn't run out of values range.
