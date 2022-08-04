@@ -1,12 +1,14 @@
 package com.url.service.counter;
 
+import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 
 import java.math.BigInteger;
 import java.util.concurrent.atomic.AtomicReference;
 
+@Profile("dev")
 @Service
-public final class IncrementingInMemoryValue implements UniqueValue {
+public class IncrementingInMemoryValue implements UniqueValue {
 
     private final AtomicReference<BigInteger> valueHolder;
 

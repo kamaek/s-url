@@ -1,7 +1,6 @@
-package com.url;
+package com.url.service;
 
 import com.url.repository.InMemoryShortenedUrlRepository;
-import com.url.service.FixedLengthShortener;
 import com.url.service.counter.IncrementingInMemoryValue;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
