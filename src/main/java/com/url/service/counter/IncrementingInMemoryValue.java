@@ -1,8 +1,11 @@
 package com.url.service.counter;
 
+import org.springframework.stereotype.Service;
+
 import java.math.BigInteger;
 import java.util.concurrent.atomic.AtomicReference;
 
+@Service
 public final class IncrementingInMemoryValue implements UniqueValue {
 
     private final AtomicReference<BigInteger> valueHolder;
