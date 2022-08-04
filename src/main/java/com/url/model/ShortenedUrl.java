@@ -1,5 +1,7 @@
 package com.url.model;
 
-public record ShortenedUrl(String original, String shortened) {
+import org.springframework.data.annotation.Id;
+
+public record ShortenedUrl(String original, @Id String shortened) {
 
 }
