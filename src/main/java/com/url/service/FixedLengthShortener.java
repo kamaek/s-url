@@ -3,6 +3,7 @@ package com.url.service;
 import com.url.model.ShortenedUrl;
 import com.url.repository.ShortenedUrlRepository;
 import com.url.service.counter.UniqueValue;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.math.BigDecimal;
@@ -20,6 +21,7 @@ public final class FixedLengthShortener implements UrlShortener {
     private final String shortenedPrefix;
     private final int shortenedSize;
 
+    @Autowired
     public FixedLengthShortener(UniqueValue uniqueValue, ShortenedUrlRepository repository) {
         this.uniqueValue = Objects.requireNonNull(uniqueValue);
         this.repository = Objects.requireNonNull(repository);
